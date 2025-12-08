@@ -1,5 +1,6 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { SetStateAction, useState } from "react";
 
@@ -20,12 +21,13 @@ const Consulta = () => {
           Atividade DEJEM e Atividade DELEGADA
         </p>
       </div>
-      <Link
-        href="/"
-        className="text-black hover:font-bold bg-[#FFFE03] px-6 py-1 rounded-lg"
-      >
-        Voltar
-      </Link>
+      <Button asChild variant={"default"} className="text-black font-medium hover:font-bold bg-[#FFFE03] hover:bg-[#FFFE03]">
+          <Link
+            href="/"
+          >
+            Voltar
+          </Link>
+        </Button>
       <div className="flex flex-col max-w-7xl w-full mx-auto items-start gap-1">
         <span className="text-xs text-zinc-400">ID da escala:</span>
         <input

@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 const Formulario = () => {
@@ -5,12 +6,13 @@ const Formulario = () => {
     <div className="flex flex-col justify-center items-center gap-10 pb-10">
       <h2 className="text-center text-3xl font-bold">Previsão do Almoço</h2>
       <div>
-        <Link
-          href="/"
-          className="text-black hover:font-bold bg-[#FFFE03] px-6 py-1 rounded-lg"
-        >
-          Voltar
-        </Link>
+        <Button asChild variant={"default"} className="text-black font-medium hover:font-bold bg-[#FFFE03] hover:bg-[#FFFE03]">
+          <Link
+            href="/"
+          >
+            Voltar
+          </Link>
+        </Button>
       </div>
       <div className="flex max-w-7xl w-full p-5">
         <iframe

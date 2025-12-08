@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 interface linksProps {
   href: string;
@@ -9,7 +10,7 @@ interface linksProps {
 
 const Links = ({ href, src, text, blank }: linksProps) => {
   return (
-    <a
+    <Link
       href={href}
       target={blank}
       className="flex flex-col justify-center items-center text-zinc-400 rounded-full text-sm lg:text-base uppercase px-2 py-1 hover:animate-pulse"
@@ -18,7 +19,7 @@ const Links = ({ href, src, text, blank }: linksProps) => {
         <Image src={src} alt="" width={25} height={25} />
         {text}
       </div>
-    </a>
+    </Link>
   );
 };
 

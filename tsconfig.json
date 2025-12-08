@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     "app/components/WeatherInformations/WeatherInformations.jsx",
     "app/components/Weather.jsx"
-  ],
+, "components/WeatherInformations.tsx", "components/Weather.tsx"  ],
   "exclude": ["node_modules"]
 }

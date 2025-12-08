@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 const area = () => {
@@ -8,12 +9,13 @@ const area = () => {
           Limites de área dos Batalhões e DP
         </h2>
       </div>
-      <Link
-        href="/"
-        className="text-black hover:font-bold bg-[#FFFE03] px-6 py-1 rounded-lg"
-      >
-        Voltar
-      </Link>
+     <Button asChild variant={"default"} className="text-black font-medium hover:font-bold bg-[#FFFE03] hover:bg-[#FFFE03]">
+          <Link
+            href="/"
+          >
+            Voltar
+          </Link>
+        </Button>
       <div className="flex max-w-7xl w-full pb-10 items-center justify-center">
         <iframe
           src="https://www.google.com/maps/d/embed?mid=1IZQYhjM25zcrjnTEByfibpcDAE59r9o&ehbc=2E312F"
