@@ -40,7 +40,7 @@ const Consulta = () => {
       <div className="flex max-w-7xl w-full pb-10">
         {valor === "" ? null : (
           <iframe
-            src={`http://sistemasadmin.intranet.policiamilitar.sp.gov.br/Escala/arrelpreesc.aspx?${valor}`}
+            src={`https://sistemasadmin.intranet.policiamilitar.sp.gov.br/Escala/arrelpreesc.aspx?${valor}`}
             width="100%"
             height="900px"
           />
