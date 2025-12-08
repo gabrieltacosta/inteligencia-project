@@ -143,11 +143,11 @@ const LoginForm = () => {
                   <p> Entrar </p>
                 )}
               </Button>
-                {form.formState.errors.root && (
+              {form.formState.errors.root && (
                 <p className="text-red-500 text-sm">
                   {form.formState.errors.root.message}
                 </p>
-                )}
+              )}
             </form>
           </Form>
         </div>
@@ -157,8 +157,8 @@ const LoginForm = () => {
           <p className="text-center text-xs text-neutral-500">
             Criado por{" "}
             <Link href="#" className="underline" target="_blank">
-              <span className="dark:text-white/70 cursor-pointer">
-                HawkDev.
+              <span className="text-orange-500 cursor-pointer">
+                Cb PM Gabriel.
               </span>
             </Link>
           </p>
