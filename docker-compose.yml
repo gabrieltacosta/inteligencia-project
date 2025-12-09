@@ -4,6 +4,7 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: inteligencia-app
+    pull_policy: build
     ports:
       - "3030:3030"
     restart: always
