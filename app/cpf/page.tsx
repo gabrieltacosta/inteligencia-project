@@ -2,7 +2,7 @@ import ConsultaForm from "@/components/consulta-form";
 import { Button } from "@/components/ui/button";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
-import Link from "next/link"
+import VoltarButton from "@/components/voltar-button";
 
 const Dashboard = async () => {
   const session = await (await cookies()).get("access_token");
@@ -19,16 +19,10 @@ const Dashboard = async () => {
   }
 
   return (
-    <div className="flex flex-col justify-center items-center gap-10 pb-10">
+    <div className="flex flex-col justify-center items-center gap-10 mb-20">
       <div className="flex items-center justify-between gap-10">
         <div>
-        <Button asChild variant={"default"} className="text-black font-medium hover:font-bold bg-[#FFFE03] hover:bg-[#FFFE03]">
-          <Link
-            href="/"
-          >
-            Voltar
-          </Link>
-        </Button>
+        <VoltarButton />
         </div>
         <div>
         <Button variant={"destructive"} onClick={handleLogout}>
