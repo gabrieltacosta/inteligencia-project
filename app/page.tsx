@@ -35,6 +35,18 @@ export default function Home() {
           blank="_blank"
         />
         <Links
+          href="https://cop.pmesp.br.evm.online/"
+          src="/pmesp.svg"
+          text="Sistema COP"
+          blank="_blank"
+        />
+        <Links
+          href="https://www9.intranet.policiamilitar.sp.gov.br/unidades/coordop/site/cop/tut-treinamento-p2.html"
+          src="/pmesp.svg"
+          text="Manual COP"
+          blank="_blank"
+        />
+        <Links
           href="https://alertabrasil.prf.gov.br/alertabrasil/login"
           src="/alertaBrasil.svg"
           text="Alerta Brasil"
@@ -181,11 +193,7 @@ export default function Home() {
           text="Servidor p2"
           blank="_blank"
         />
-        <Links
-          href="/cpf"
-          src="/rodoviaria2.png"
-          text="Consulta Telefones"
-        />
+        <Links href="/cpf" src="/rodoviaria2.png" text="Consulta Telefones" />
       </div>
     </div>
   );
