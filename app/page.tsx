@@ -37,13 +37,13 @@ export default function Home() {
         <Links
           href="https://cop.pmesp.br.evm.online/"
           src="/pmesp.svg"
-          text="Sistema COP"
+          text="Novo sistema de COP's"
           blank="_blank"
         />
         <Links
           href="https://www9.intranet.policiamilitar.sp.gov.br/unidades/coordop/site/cop/tut-treinamento-p2.html"
           src="/pmesp.svg"
-          text="Manual COP"
+          text="Manual Novo sistema de COP's"
           blank="_blank"
         />
         <Links
