@@ -3,6 +3,11 @@ import { Button } from "@/components/ui/button";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import VoltarButton from "@/components/voltar-button";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Consulta telefones por CPF",
+};
 
 const Dashboard = async () => {
   const session = await (await cookies()).get("access_token");
@@ -22,12 +27,12 @@ const Dashboard = async () => {
     <div className="flex flex-col justify-center items-center gap-10 mb-20">
       <div className="flex items-center justify-between gap-10">
         <div>
-        <VoltarButton />
+          <VoltarButton />
         </div>
         <div>
-        <Button variant={"destructive"} onClick={handleLogout}>
-          Sair
-        </Button>
+          <Button variant={"destructive"} onClick={handleLogout}>
+            Sair
+          </Button>
         </div>
       </div>
       <div className="w-full">

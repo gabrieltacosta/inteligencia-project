@@ -1,17 +1,12 @@
-"use client";
-
+import DejemForm from "@/components/dejem-form";
 import VoltarButton from "@/components/voltar-button";
-import { SetStateAction, useState } from "react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Consultas de Escalas",
+};
 
 const Consulta = () => {
-  const [valor, setValor] = useState("");
-
-  const handleChange = (event: {
-    target: { value: SetStateAction<string> };
-  }) => {
-    setValor(event.target.value);
-  };
-
   return (
     <div className="w-full flex flex-col justify-center items-center gap-5 p-6 mb-20">
       <div className="items-center justify-center">
@@ -21,26 +16,7 @@ const Consulta = () => {
         </p>
       </div>
       <VoltarButton />
-      <div className="flex flex-col max-w-7xl w-full mx-auto items-start gap-1">
-        <span className="text-xs text-zinc-400">ID da escala:</span>
-        <input
-          type="number"
-          className="flex-1 bg-transparent border border-zinc-400 px-2 w-80"
-          placeholder="Digite o id da escala..."
-          required
-          onChange={handleChange}
-          autoFocus
-        />
-      </div>
-      <div className="flex max-w-7xl w-full pb-10">
-        {valor === "" ? null : (
-          <iframe
-            src={`https://sistemasadmin.intranet.policiamilitar.sp.gov.br/Escala/arrelpreesc.aspx?${valor}`}
-            width="100%"
-            height="900px"
-          />
-        )}
-      </div>
+      <DejemForm />
     </div>
   );
 };

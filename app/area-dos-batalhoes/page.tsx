@@ -1,4 +1,9 @@
 import VoltarButton from "@/components/voltar-button";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Limites de área dos Batalhões e DP",
+};
 
 const area = () => {
   return (

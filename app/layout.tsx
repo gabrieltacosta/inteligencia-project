@@ -6,12 +6,16 @@ import Footer from "@/components/Footer";
 
 const roboto = Roboto({
   subsets: ["latin"],
-  weight: "400",
+  weight: ["400", "500", "700"],
 });
 
 export const metadata: Metadata = {
-  title: "Inteligência - 6º BPRv",
+  title: {
+    template: `%s | Inteligência - 6º BPRv`,
+    default: "Inteligência - 6º BPRv",
+  },
   icons: "/rodoviaria.png",
+  description: "Aplicação com links de ferramentas de inteligência do 6º BPRv.",
 };
 
 export default function RootLayout({

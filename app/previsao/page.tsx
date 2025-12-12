@@ -1,4 +1,9 @@
 import VoltarButton from "@/components/voltar-button";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Previsão do Almoço",
+};
 
 const Formulario = () => {
   return (

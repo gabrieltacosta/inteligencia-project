@@ -2,6 +2,11 @@ import LoginForm from "@/components/login-form";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import VoltarButton from "@/components/voltar-button";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Login",
+};
 
 const ConsultaCpf = async () => {
   const session = await (await cookies()).get("access_token");
