@@ -53,12 +53,6 @@ export default function Home() {
           blank="_blank"
         />
         <Links
-          href="http://dr.itsbrasil.net.br/"
-          src="/rodoviaria2.png"
-          text="DER - its brasil"
-          blank="_blank"
-        />
-        <Links
           href="https://blitzsjc.sistemasfotosensores.com/"
           src="/fotoblitz.ico"
           text="fotobliz - sjc"
