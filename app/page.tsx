@@ -15,7 +15,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="flex max-w-7xl w-full mx-auto flex-wrap justify-evenly gap-4 lg:gap-10">
+      <div className="flex max-w-7xl w-full mx-auto flex-wrap justify-around gap-4 lg:gap-10">
         <Links
           href="http://operacional.muralhapaulista.sp.gov.br/"
           src="/muralha.svg"
