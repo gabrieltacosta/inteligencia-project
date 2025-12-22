@@ -23,7 +23,6 @@ import { Input } from "./ui/input";
 import { useState } from "react";
 import { Button } from "./ui/button";
 import { Eye, EyeOff, Loader2 } from "lucide-react";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 const formSchema = z.object({
@@ -94,7 +93,7 @@ const LoginForm = () => {
                     <FormControl>
                       <Input
                         {...field}
-                        placeholder="Digite seu email"
+                        placeholder="Digite seu email..."
                         autoComplete="email"
                       />
                     </FormControl>
@@ -113,7 +112,7 @@ const LoginForm = () => {
                         <Input
                           {...field}
                           type={showPassword ? "text" : "password"}
-                          placeholder="********"
+                          placeholder="Digite sua senha..."
                           autoComplete="password"
                         />
                         <Button
@@ -156,11 +155,7 @@ const LoginForm = () => {
         <div className="flex justify-center w-full border-t py-4">
           <p className="text-center text-xs text-neutral-500">
             Criado por{" "}
-            <Link href="#" className="underline" target="_blank">
-              <span className="text-orange-500 cursor-pointer">
-                Cb PM Gabriel.
-              </span>
-            </Link>
+            <span className="text-orange-500 underline">Cb PM Gabriel.</span>
           </p>
         </div>
       </CardFooter>
