@@ -1,5 +1,9 @@
 # Etapa 1: Construção
-FROM node:22-alpine AS builder
+FROM node:22-alpine AS base
+
+FROM base AS deps
+
+RUN apk add --no-cache libc6-compat
 
 WORKDIR /app 
 
@@ -15,28 +19,30 @@ COPY . .
 # Construir aplicação
 RUN npm run build
 
-# Etapa 2: Execução
-FROM node:22-alpine
+
+
+# Etapa 2: Produção
+FROM base AS production
 
 WORKDIR /app
+
+ENV NODE_ENV production
+ENV NEXT_SHARP_PATH "/app/node_modules/sharp"
 
 # Criar usuário não-root para segurança
 RUN addgroup --system --gid 1001 nodejs && \
     adduser --system --uid 1001 nextjs
 
-# Copiar arquivos necessários do builder
-COPY --from=builder /app/package.json ./
-COPY --from=builder /app/package-lock.json ./
-COPY --from=builder /app/node_modules ./node_modules
-COPY --from=builder /app/.next ./.next
-COPY --from=builder /app/next.config.ts ./
-COPY --from=builder /app/public ./public
-COPY --from=builder /app/tsconfig.json ./
-COPY --from=builder /app/tailwind.config.ts ./
-COPY --from=builder /app/postcss.config.mjs ./
+# Copiar arquivos necessários do deps
+COPY --from=deps /app/public ./public
 
-# Mudar propriedade dos arquivos para o usuário nextjs
-RUN chown -R nextjs:nodejs /app
+RUN mkdir .next
+RUN chown nextjs:nodejs .next
+
+COPY --from=deps /app/next.config.ts ./
+COPY --from=deps --chown=nextjs:nodejs /app/.next/standalone ./
+COPY --from=deps --chown=nextjs:nodejs /app/.next/static ./.next/static
+
 
 # Mudar para usuário não-root
 USER nextjs
@@ -46,7 +52,7 @@ EXPOSE 3030
 
 # Variável de ambiente para porta
 ENV PORT=3030
-ENV NODE_ENV=production
+ENV HOSTNAME "0.0.0.0"
 
 # Comando para iniciar aplicação na porta 3030
-CMD ["npm", "run", "start"]
+CMD ["node", "server.js"]
