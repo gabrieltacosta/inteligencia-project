@@ -52,6 +52,7 @@ const ConsultaForm = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [searchedCpf, setSearchedCpf] = useState<string | null>(null);
+  const [refreshBalance, setRefreshBalance] = useState(0);
 
   const form = useForm<ConsultaFormData>({
     resolver: zodResolver(formSchema),
@@ -82,6 +83,7 @@ const ConsultaForm = () => {
       if (result.success && Array.isArray(result.data)) {
         setPhones(result.data);
         setSearchedCpf(data.cpf);
+        setRefreshBalance(prev => prev + 1);
       } else {
         setError("Nenhum telefone encontrado para este CPF");
       }
@@ -140,7 +142,7 @@ const ConsultaForm = () => {
           </Form>
         </CardContent>
         <CardFooter>
-          <BalanceDisplay />
+          <BalanceDisplay refreshTrigger={refreshBalance} />
         </CardFooter>
       </Card>
 

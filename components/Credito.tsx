@@ -32,7 +32,7 @@ const initialBalanceState: BalanceData = {
   loading: true,
 };
 
-export function BalanceDisplay() {
+export function BalanceDisplay({ refreshTrigger }: { refreshTrigger?: number }) {
   const [state, setState] = useState<BalanceData>(initialBalanceState);
 
   useEffect(() => {
@@ -73,7 +73,7 @@ export function BalanceDisplay() {
     }
 
     fetchBalance();
-  }, []);
+  }, [refreshTrigger]);
 
   if (state.loading) return <p>🔄 Carregando saldo...</p>;
   if (state.error) return <p>❌ Erro ao carregar saldo: **{state.error}**</p>;
