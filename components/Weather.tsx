@@ -8,7 +8,7 @@ const Weather = () => {
   const [weather, setWeather] = useState();
 
   const city = "sao paulo";
-  const key = "e2af38232f7ba73e81d3843d8560e594";
+  const key = process.env.NEXT_PUBLIC_WEATHER_API_KEY;
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&lang=pt_br&units=metric`;
 
   useEffect(() => {
