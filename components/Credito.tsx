@@ -76,7 +76,7 @@ export function BalanceDisplay({ refreshTrigger }: { refreshTrigger?: number }) 
     fetchBalance();
   }, [refreshTrigger]);
 
-  if (state.loading) return <p><Loader2 className="animate-spin text-[#FFFE03]" /> Carregando saldo...</p>;
+  if (state.loading) return <p className="flex items-center gap-2"><Loader2 size={16} className="animate-spin text-[#FFFE03]" /> Carregando saldo...</p>;
   if (state.error) return <p>❌ Erro ao carregar saldo: **{state.error}**</p>;
 
   return (
