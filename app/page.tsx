@@ -41,7 +41,7 @@ export default function Home() {
           blank="_blank"
         />
         <Links
-          href="https://cop.pmesp.br.evm.online/"
+          href="https://stream.pmesp.br.evm.online/"
           src="/pmesp.svg"
           text="Sistema de COP's ao vivo"
           blank="_blank"
