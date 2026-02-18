@@ -3,8 +3,8 @@ import Weather from "@/components/Weather";
 
 export default function Home() {
   return (
-    <div className="w-full  flex flex-col justify-start items-center gap-10 p-6 mb-20">
-      <div className="w-full max-w-7xl flex justify-center items-center">
+    <div className="w-full flex flex-col justify-start items-center gap-20 p-6 mb-20">
+      <div className="container mx-auto flex justify-center items-center">
         <div className="flex-1">
           <h2 className="text-lg lg:text-3xl font-bold text-center">
             Ferramentas de Inteligência
@@ -15,7 +15,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="flex max-w-7xl w-full mx-auto flex-wrap justify-around gap-4 lg:gap-10">
+      <main className="grid grid-cols-2 md:grid-cols-5 container mx-auto items-center justify-center gap-4 lg:gap-6">
         <Links
           href="http://operacional.muralhapaulista.sp.gov.br/"
           src="/muralha.svg"
@@ -188,7 +188,7 @@ export default function Home() {
           blank="_blank"
         />
         <Links href="/cpf" src="/rodoviaria2.png" text="Consulta Telefones" />
-      </div>
+      </main>
     </div>
   );
 }

@@ -1,6 +1,4 @@
-"use client"
-
-import Image from "next/image"
+import Image from "next/image";
 
 export interface WeatherInformationsProps {
   weather: {
@@ -10,12 +8,10 @@ export interface WeatherInformationsProps {
   };
 }
 
-
-
 function WeatherInformations({ weather }: WeatherInformationsProps) {
   return (
-    <div className="flex flex-col justify-center items-center bg-zinc-500/30 rounded-lg p-3">
-      <span className="text-lg lg:text-2xl font-bold">{weather.name}</span>
+    <div className="flex flex-col justify-center items-center bg-zinc-500/20 rounded-lg p-2 lg:p-3">
+      <span className="text-md lg:text-2xl font-bold">{weather.name}</span>
       <div className="flex justify-center items-center">
         <Image
           src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}.png`}
