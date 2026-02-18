@@ -8,17 +8,12 @@ export default function manifest(): MetadataRoute.Manifest {
       "Aplicação com links de ferramentas de inteligência do 6º BPRv.",
     start_url: "/",
     display: "standalone",
-    background_color: "#c9c9c9",
+    background_color: "#272727",
     theme_color: "#464646",
     icons: [
       {
-        src: "/rodoviaria-192.png",
-        sizes: "192x84",
-        type: "image/png",
-      },
-      {
-        src: "/rodoviaria-512.png",
-        sizes: "512x223",
+        src: "/logo.png",
+        sizes: "any",
         type: "image/png",
       },
     ],
