@@ -128,6 +128,7 @@ const ConsultaForm = () => {
                         autoComplete="off"
                         type="text"
                         inputMode="numeric"
+                        maxLength={11}
                       />
                     </FormControl>
                     <FormMessage />
