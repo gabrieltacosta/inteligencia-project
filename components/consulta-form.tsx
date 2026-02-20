@@ -40,6 +40,7 @@ interface PhoneItem {
 const formSchema = z.object({
   cpf: z
     .string()
+    .trim()
     .min(1, "O CPF é obrigatório")
     .length(11, "O CPF deve ter exatamente 11 dígitos")
     .regex(/^\d+$/, "Digite apenas números"),
@@ -56,6 +57,9 @@ const ConsultaForm = () => {
 
   const form = useForm<ConsultaFormData>({
     resolver: zodResolver(formSchema),
+    defaultValues: {
+      cpf: "",
+    },
   });
 
   const onSubmit = async (data: ConsultaFormData) => {

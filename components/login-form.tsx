@@ -95,6 +95,7 @@ const LoginForm = () => {
                         {...field}
                         placeholder="Digite seu email..."
                         autoComplete="email"
+                        inputMode="email"
                       />
                     </FormControl>
                     <FormMessage />
