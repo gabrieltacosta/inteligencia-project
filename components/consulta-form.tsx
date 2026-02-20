@@ -40,9 +40,9 @@ interface PhoneItem {
 const formSchema = z.object({
   cpf: z
     .string()
-    .trim()
-    .min(11, "O CPF deve ter 11 dígitos")
-    .max(11, "O CPF deve ter 11 dígitos"),
+    .min(1, "O CPF é obrigatório")
+    .length(11, "O CPF deve ter exatamente 11 dígitos")
+    .regex(/^\d+$/, "Digite apenas números"),
 });
 
 type ConsultaFormData = z.infer<typeof formSchema>;
@@ -83,7 +83,7 @@ const ConsultaForm = () => {
       if (result.success && Array.isArray(result.data)) {
         setPhones(result.data);
         setSearchedCpf(data.cpf);
-        setRefreshBalance(prev => prev + 1);
+        setRefreshBalance((prev) => prev + 1);
       } else {
         setError("Nenhum telefone encontrado para este CPF");
       }
@@ -122,6 +122,8 @@ const ConsultaForm = () => {
                         {...field}
                         placeholder="Digite o CPF (11 dígitos)"
                         autoComplete="off"
+                        type="text"
+                        inputMode="numeric"
                       />
                     </FormControl>
                     <FormMessage />
@@ -179,12 +181,12 @@ const ConsultaForm = () => {
                         {phone.type === "WORK"
                           ? "Trabalho"
                           : phone.type === "MOBILE"
-                          ? "Celular"
-                          : phone.type === "HOME"
-                          ? "Residencial"
-                          : phone.type === "OTHER"
-                          ? "Outro"
-                          : phone.type}
+                            ? "Celular"
+                            : phone.type === "HOME"
+                              ? "Residencial"
+                              : phone.type === "OTHER"
+                                ? "Outro"
+                                : phone.type}
                       </span>
                     </CardTitle>
                     {phone.is_main && (
@@ -225,13 +227,13 @@ const ConsultaForm = () => {
                     <p className="truncate">
                       Primeiro:{" "}
                       {new Date(phone.first_seen_date).toLocaleDateString(
-                        "pt-BR"
+                        "pt-BR",
                       )}
                     </p>
                     <p className="truncate">
                       Último:{" "}
                       {new Date(phone.last_seen_date).toLocaleDateString(
-                        "pt-BR"
+                        "pt-BR",
                       )}
                     </p>
                   </div>
