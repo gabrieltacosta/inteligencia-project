@@ -4,7 +4,7 @@ import Weather from "@/components/Weather";
 export default function Home() {
   return (
     <div className="w-full flex flex-col justify-start items-center gap-20 p-6 mb-20">
-      <div className="container mx-auto flex justify-center items-center">
+      <div className="container mx-auto flex justify-center items-center gap-2">
         <div className="flex-1">
           <h2 className="text-lg lg:text-3xl font-bold text-center">
             Ferramentas de Inteligência
