@@ -7,7 +7,7 @@ services:
     pull_policy: build
     ports:
       - "3030:3030"
-    restart: always
+    restart: unless-stopped
     env_file:
       - stack.env
     environment:

@@ -15,7 +15,7 @@ function WeatherInformations({ weather }: WeatherInformationsProps) {
       <div className="flex justify-center items-center">
         <Image
           src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}.png`}
-          alt="Imagem do céu"
+          alt="Icone do céu atual"
           width={50}
           height={50}
         />

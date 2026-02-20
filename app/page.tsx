@@ -15,7 +15,7 @@ export default function Home() {
         </div>
       </div>
 
-      <main className="grid grid-cols-2 md:grid-cols-5 container mx-auto items-center justify-center gap-4 lg:gap-6">
+      <main className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 container mx-auto items-center justify-center gap-4 lg:gap-6">
         <Links
           href="http://operacional.muralhapaulista.sp.gov.br/"
           src="/muralha.svg"
@@ -25,7 +25,7 @@ export default function Home() {
         <Links
           href="http://monitoramento.muralhapaulista.sp.gov.br/"
           src="/muralha.svg"
-          text="Monitoramento Muralha Paulista"
+          text="Monitoramento"
           blank="_blank"
         />
         <Links
@@ -43,7 +43,7 @@ export default function Home() {
         <Links
           href="https://stream.pmesp.br.evm.online/"
           src="/pmesp.svg"
-          text="Sistema de COP's ao vivo"
+          text="COP's ao vivo"
           blank="_blank"
         />
         <Links
@@ -126,7 +126,7 @@ export default function Home() {
         <Links
           href="/area-dos-batalhoes"
           src="/maps.png"
-          text="Limites de área dos Batalhões"
+          text="Área dos Batalhões"
         />
         <Links
           href="https://ead.pmesp.org/"
@@ -134,21 +134,11 @@ export default function Home() {
           text="PVT/ITP/EAP"
           blank="_blank"
         />
-        <Links
-          href="/consulta"
-          src="/pmesp.svg"
-          text="Consulta DEJEM/DELEGADA"
-        />
+        <Links href="/consulta" src="/pmesp.svg" text="DEJEM/DELEGADA" />
         <Links
           href="https://minhaarea.sp.gov.br/plataformasp"
           src="/sspNovo.png"
-          text="SEI - Sistema Eletrônico de Informações"
-          blank="_blank"
-        />
-        <Links
-          href="https://web.whatsapp.com/"
-          src="/whatsapp.png"
-          text="Whatsapp Web"
+          text="SEI"
           blank="_blank"
         />
         <Links
@@ -157,15 +147,15 @@ export default function Home() {
           text="holerite"
           blank="_blank"
         />
-        <Links
+        {/* <Links
           href="/previsao"
           src="/rodoviaria2.png"
           text="Previsão do Almoço"
-        />
+          /> */}
         <Links
           href="https://plano-chamada.hawkdev.cloud"
           src="/rodoviaria2.png"
-          text="Plano de Chamada | Nada Consta"
+          text="Plano de Chamada"
           blank="_blank"
         />
         <Links
@@ -188,6 +178,12 @@ export default function Home() {
           blank="_blank"
         />
         <Links href="/cpf" src="/rodoviaria2.png" text="Consulta Telefones" />
+        <Links
+          href="https://web.whatsapp.com/"
+          src="/whatsapp.png"
+          text="Whatsapp Web"
+          blank="_blank"
+        />
       </main>
     </div>
   );
