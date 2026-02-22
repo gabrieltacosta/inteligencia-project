@@ -184,6 +184,12 @@ export default function Home() {
           text="Whatsapp Web"
           blank="_blank"
         />
+        <Links
+          href="https://spmar.hawkdev.cloud/"
+          src="/rodoviaria2.png"
+          text="Passagens SPMAR"
+          blank="_blank"
+        />
       </main>
     </div>
   );
