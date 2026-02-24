@@ -147,11 +147,11 @@ export default function Home() {
           text="holerite"
           blank="_blank"
         />
-        {/* <Links
-          href="/previsao"
+        <Links
+          href="https://batalhao.cisuporte.com.br/"
           src="/rodoviaria2.png"
           text="Previsão do Almoço"
-          /> */}
+        />
         <Links
           href="https://plano-chamada.hawkdev.cloud"
           src="/rodoviaria2.png"
