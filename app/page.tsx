@@ -151,6 +151,7 @@ export default function Home() {
           href="https://batalhao.cisuporte.com.br/"
           src="/rodoviaria2.png"
           text="Previsão do Almoço"
+          blank="_blank"
         />
         <Links
           href="https://plano-chamada.hawkdev.cloud"
