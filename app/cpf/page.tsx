@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: "Consulta telefones por CPF",
 };
 
-const Dashboard = async () => {
+const consultaCpfPage = async () => {
   const session = await (await cookies()).get("access_token");
 
   if (!session) {
@@ -42,4 +42,4 @@ const Dashboard = async () => {
   );
 };
 
-export default Dashboard;
+export default consultaCpfPage;

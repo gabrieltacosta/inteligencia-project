@@ -3,6 +3,7 @@ import { Roboto } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { Toaster } from "@/components/ui/sonner";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -39,6 +40,7 @@ export default function RootLayout({
             <Footer />
           </div>
         </div>
+        <Toaster richColors position="top-center" />
       </body>
     </html>
   );
