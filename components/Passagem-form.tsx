@@ -68,10 +68,12 @@ const PassagemForm = () => {
   };
 
   const passagensOrdenadas = [...passagens].sort((a, b) => {
-    const dataA = new Date(a.dataOcorrencia).getTime();
-    const dataB = new Date(b.dataOcorrencia).getTime();
+    const dataA = new Date(a.dataOcorrencia).getDate();
+    const dataB = new Date(b.dataOcorrencia).getDate();
     return dataB - dataA; // Retorna a ordem decrescente
   });
+
+  console.log(passagens);
 
   return (
     <div className="w-full max-w-sm md:max-w-md p-4 dark">
@@ -168,18 +170,24 @@ const PassagemForm = () => {
         ) : (
           ""
         )}
-        {passagensOrdenadas.map((p) => (
-          <Card
-            key={p.idTransacao}
-            className="flex flex-col items-start pt-6 rounded-lg shadow-sm"
-          >
-            <CardContent>
-              <p>Praça: {p.praca}</p>
-              <p>Data: {new Date(p.dataOcorrencia).toLocaleDateString()}</p>
-              <p>Cabine: {p.numeroCabine}</p>
-            </CardContent>
-          </Card>
-        ))}
+        {passagensOrdenadas.map((p) => {
+          const d = new Date(p.dataOcorrencia);
+          return (
+            <Card
+              key={p.idTransacao}
+              className="flex flex-col items-start pt-6 rounded-lg shadow-sm"
+            >
+              <CardContent>
+                <p>Praça: {p.praca}</p>
+                <p>
+                  Data: {d.toLocaleDateString("pt-BR")},{" "}
+                  {d.toLocaleTimeString("pt-BR")}
+                </p>
+                <p>Cabine: {p.numeroCabine}</p>
+              </CardContent>
+            </Card>
+          );
+        })}
       </div>
     </div>
   );
