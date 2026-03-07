@@ -73,8 +73,6 @@ const PassagemForm = () => {
     return dataB - dataA; // Retorna a ordem decrescente
   });
 
-  console.log(passagens);
-
   return (
     <div className="w-full max-w-sm md:max-w-md p-4 dark">
       <Card className="rounded-lg">
