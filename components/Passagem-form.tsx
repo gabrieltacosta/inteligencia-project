@@ -164,6 +164,9 @@ const PassagemForm = () => {
                 {passagensOrdenadas[0]?.placaOperador}
               </span>
             </p>
+            <p className="text-center text-sm mb-4">
+              Total: {passagensOrdenadas.length} passagens
+            </p>
           </>
         ) : (
           ""
