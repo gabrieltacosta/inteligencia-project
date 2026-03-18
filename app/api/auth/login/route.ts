@@ -9,7 +9,7 @@ export async function POST(req: Request) {
     if (!email || !password) {
       return NextResponse.json(
         { success: false, error: "email and password are required" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -17,13 +17,15 @@ export async function POST(req: Request) {
       console.error("DESKDATA_URL não configurada");
       return NextResponse.json(
         { success: false, error: "Configuração do servidor inválida" },
-        { status: 500 }
+        { status: 500 },
       );
     }
 
+    const apiUrl = new URL("/auth", process.env.DESKDATA_URL).href;
+
     const options = {
       method: "POST",
-      url: `${process.env.DESKDATA_URL}/auth`,
+      url: apiUrl,
       headers: {
         accept: "application/json",
         "content-type": "application/json",
@@ -37,15 +39,15 @@ export async function POST(req: Request) {
     if (!accessToken) {
       return NextResponse.json(
         { success: false, error: "No access token returned" },
-        { status: 401 }
+        { status: 401 },
       );
     }
 
     const maxAge = 60 * 60 * 24; // 1 day in seconds
-    const secure = process.env.NODE_ENV === "production";
-
+    const isProd = process.env.NODE_ENV === "production";
+    // Apenas Secure se for produção E não for localhost (ou use uma variável de ambiente específica)
     const cookie = `access_token=${accessToken}; HttpOnly; Path=/; Max-Age=${maxAge}; SameSite=Lax${
-      secure ? "; Secure" : ""
+      isProd && !req.url.includes("localhost") ? "; Secure" : ""
     }`;
 
     return new Response(JSON.stringify({ success: true }), {
@@ -57,10 +59,11 @@ export async function POST(req: Request) {
     });
   } catch (error) {
     console.error("Erro na autenticação:", error);
-    const errorMessage = error instanceof Error ? error.message : "Erro desconhecido";
+    const errorMessage =
+      error instanceof Error ? error.message : "Erro desconhecido";
     return NextResponse.json(
       { success: false, error: "Authentication failed", details: errorMessage },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

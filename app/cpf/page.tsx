@@ -1,28 +1,14 @@
 import ConsultaForm from "@/components/consulta-form";
 import { Button } from "@/components/ui/button";
-import { cookies } from "next/headers";
-import { redirect } from "next/navigation";
 import VoltarButton from "@/components/voltar-button";
 import { Metadata } from "next";
+import { handleLogout } from "./actions";
 
 export const metadata: Metadata = {
   title: "Consulta telefones por CPF",
 };
 
-const consultaCpfPage = async () => {
-  const session = await (await cookies()).get("access_token");
-
-  if (!session) {
-    redirect("/login");
-  }
-
-  async function handleLogout() {
-    "use server";
-
-    (await cookies()).delete("access_token");
-    redirect("/login");
-  }
-
+const consultaCpfPage = () => {
   return (
     <div className="flex flex-col justify-center items-center gap-10 mb-20">
       <div className="flex items-center justify-between gap-10">

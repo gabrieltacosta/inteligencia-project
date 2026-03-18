@@ -1,6 +1,4 @@
 import LoginForm from "@/components/login-form";
-import { cookies } from "next/headers";
-import { redirect } from "next/navigation";
 import VoltarButton from "@/components/voltar-button";
 import { Metadata } from "next";
 
@@ -8,12 +6,7 @@ export const metadata: Metadata = {
   title: "Login",
 };
 
-const ConsultaCpf = async () => {
-  const session = await (await cookies()).get("access_token");
-
-  if (session) {
-    redirect("/cpf");
-  }
+const loginCpf = () => {
   return (
     <div className="flex flex-col justify-center items-center gap-10 p-6 mb-20">
       <h2 className="font-bold text-3xl">Consulta telefones por CPF.</h2>
@@ -27,4 +20,4 @@ const ConsultaCpf = async () => {
   );
 };
 
-export default ConsultaCpf;
+export default loginCpf;

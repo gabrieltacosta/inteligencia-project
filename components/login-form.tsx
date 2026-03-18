@@ -48,24 +48,29 @@ const LoginForm = () => {
   });
 
   const onSubmit = async (data: LoginFormData) => {
-    const res = await fetch("/api/auth/login", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email: data.email, password: data.password }),
-      credentials: "same-origin",
-    });
-
-    if (!res.ok) {
-      return form.setError("root", {
-        type: "server",
-        message: "Falha no login, verifique suas credenciais",
+    try {
+      const res = await fetch("/api/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: data.email, password: data.password }),
+        credentials: "same-origin",
       });
-    }
 
-    // Sucesso: cookie httpOnly definido pelo servidor
-    console.log("Login bem-sucedido e cookie httpOnly definido");
-    // Redireciona para dashboard
-    router.push("/cpf");
+      if (!res.ok) {
+        return form.setError("root", {
+          type: "server",
+          message: "Falha no login, verifique suas credenciais",
+        });
+      }
+
+      // Sucesso: cookie httpOnly definido pelo servidor
+      console.log("Login bem-sucedido e cookie httpOnly definido");
+      // Redireciona para dashboard
+      router.refresh();
+      router.push("/cpf");
+    } catch (error) {
+      form.setError("root", { message: "Erro de conexão com o servidor" });
+    }
   };
 
   const togglePasswordVisibility = () => {
