@@ -63,11 +63,21 @@ const LoginForm = () => {
         });
       }
 
-      // Sucesso: cookie httpOnly definido pelo servidor
-      console.log("Login bem-sucedido e cookie httpOnly definido");
+      const params = new URLSearchParams(window.location.search);
+      const callbackUrl = params.get("callbackUrl");
+      const targetPath = callbackUrl || "/cpf";
+
+      console.log("Login ok, indo para:", targetPath);
+
       // Redireciona para dashboard
       router.refresh();
-      router.push("/cpf");
+      setTimeout(() => {
+        if (process.env.NODE_ENV === "production") {
+          window.location.href = targetPath;
+        } else {
+          router.push(targetPath);
+        }
+      }, 100);
     } catch (error) {
       form.setError("root", { message: "Erro de conexão com o servidor" });
     }
