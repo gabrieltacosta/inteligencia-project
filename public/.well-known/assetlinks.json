@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "cloud.hawkdev.inteligencia_app.twa",
+      "sha256_cert_fingerprints": [
+        "5E:2B:F9:73:F8:C6:6D:C8:50:CC:3F:0B:2B:7D:1F:24:C2:6D:1C:39:2C:DF:ED:08:98:E5:78:A6:7C:0C:99:05"
+      ]
+    }
+  }
+]
