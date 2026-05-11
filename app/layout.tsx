@@ -30,10 +30,10 @@ export default function RootLayout({
         className={`${roboto.className} antialiased`}
         cz-shortcut-listen="true"
       >
-        <div className="bg-[url('/veado.jpg')] bg-cover bg-center bg-no-repeat bg-fixed">
+        <div className="bg-[url('/background.jpg')] bg-cover bg-center bg-no-repeat bg-fixed">
           <div
             className="
-          w-full min-h-screen flex flex-col items-center bg-black/60 relative"
+          w-full min-h-screen flex flex-col items-center bg-black/80 relative"
           >
             <Header />
             {children}
