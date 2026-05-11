@@ -47,6 +47,12 @@ export default function Home() {
           blank="_blank"
         />
         <Links
+          href="https://app.pmrvguardiao.com.br"
+          src="/guardiao.png"
+          text="PMRV Guardião"
+          blank="_blank"
+        />
+        <Links
           href="https://alertabrasil.prf.gov.br/alertabrasil/login"
           src="/alertaBrasil.svg"
           text="Alerta Brasil"
