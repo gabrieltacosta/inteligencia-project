@@ -17,15 +17,9 @@ export default function Home() {
 
       <main className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 container mx-auto items-center justify-center gap-4 lg:gap-6">
         <Links
-          href="http://operacional.muralhapaulista.sp.gov.br/"
+          href="https://portal.muralhapaulista.sp.gov.br/"
           src="/muralha.svg"
-          text="Muralha Paulista"
-          blank="_blank"
-        />
-        <Links
-          href="http://monitoramento.muralhapaulista.sp.gov.br/"
-          src="/muralha.svg"
-          text="Monitoramento"
+          text="Portal Muralha Paulista"
           blank="_blank"
         />
         <Links
