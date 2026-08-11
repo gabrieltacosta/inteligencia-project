@@ -53,6 +53,12 @@ export default function Home() {
           blank="_blank"
         />
         <Links
+          href="https://detetiveforense.com/auth/login"
+          src="/detetive.ico"
+          text="Detetive Forense"
+          blank="_blank"
+        />
+        <Links
           href="https://bpr.itsbrasil.net.br/"
           src="/rodoviaria2.png"
           text="Its Brasil - DER"
