@@ -184,7 +184,7 @@ export default function Home() {
           blank="_blank"
         />
         <Links
-          href="https://servidor.hawkdev.cloud"
+          href="https://servidor-p2.hawkdev.cloud"
           src="/rodoviaria2.png"
           text="Servidor p2"
           blank="_blank"
