@@ -146,7 +146,9 @@ export default function Home() {
           text="PVT/ITP/EAP"
           blank="_blank"
         />
-        <Links href="/consulta" src="/pmesp.svg" text="DEJEM/DELEGADA" />
+        <Links href="https://servicesapp.policiamilitar.sp.gov.br/Pmesp.EscalaDejemDelegada.Web/#/login" src="/pmesp.svg" text="INSCRIÇÂO DEJEM/DELEGADA" blank="_blank" />
+        
+        <Links href="/consulta" src="/pmesp.svg" text="CONSULTA DEJEM/DELEGADA" />
         <Links
           href="https://minhaarea.sp.gov.br/plataformasp"
           src="/sspNovo.png"
