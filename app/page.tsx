@@ -167,7 +167,7 @@ export default function Home() {
           text="Previsão do Almoço"
         />
         <Links
-          href="https://plano-chamada.hawkdev.cloud"
+          href="https://plano-chamada.corujasrv.com.br"
           src="/rodoviaria2.png"
           text="Plano de Chamada"
           blank="_blank"
@@ -186,7 +186,7 @@ export default function Home() {
           blank="_blank"
         />
         <Links
-          href="https://servidor-p2.hawkdev.cloud"
+          href="https://servidor.corujasrv.com.br"
           src="/rodoviaria2.png"
           text="Servidor p2"
           blank="_blank"

@@ -35,7 +35,7 @@ const PassagemForm = () => {
     const dataInicial = formatDate(data.dataInicial);
     const dataFinal = formatDate(data.dataFinal);
     const placaVeiculo = data.placaVeiculo;
-    const url = "https://spmar.hawkdev.cloud/api/consultar";
+    const url = "https://spmar.corujasrv.com.br/api/consultar";
 
     setPassagens([]);
 
